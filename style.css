@@ -33,6 +33,7 @@ body {
 }
 #output {
   font-size: 54px;
+  overflow: hidden;
 }
 
 #keypad {
@@ -41,10 +42,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
-.operator.plus {
-  grid-row: span 2;
-  padding-top: 40px;
-}
+
 .number,
 .operator {
   padding: 5px 0px;
@@ -57,7 +55,23 @@ body {
   transition: all linear 1s;
 }
 .number:active,
-.key:active {
+.operator:active {
   box-shadow: rgb(150, 150, 150) 3px 3px 6px 0px inset,
     rgba(150, 150, 150, 0.5) -3px -3px 6px 1px inset;
+}
+.operator {
+  background-color: #2980b9;
+  color: #fff;
+}
+.operator.equal {
+  background-color: #1abc9c;
+}
+.operator.plus {
+  grid-row: span 2;
+  padding-top: 40px;
+}
+#clear,
+#delete {
+  background-color: #e74c3c;
+  color: #fff;
 }
